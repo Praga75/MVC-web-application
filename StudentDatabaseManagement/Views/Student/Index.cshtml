@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style>
+    table, th, td {
+        
+        border: 1px solid black;
+    }
+</style>
+
+<table style="width:100%">
+    <tr>
+        <th>studentId</th>
+        <th>studentName</th>
+        <th>department</th>
+        <th>institutionName</th>
+        <th>studentPercentage</th>       
+    </tr>
+
+    @foreach (StudentDatabase.Entity.Student student in (IEnumerable<StudentDatabase.Entity.Student>)ViewData["student"])
+    {
+        <tr style="border: 1px solid black;">
+            <td>@student.studentID</td>
+            <td>@student.studentName</td>
+            <td>@student.department</td>
+            <td>@student.institutionName</td>
+            <td>@student.studentPercentage</td>
+        </tr>
+    }
+</table>
